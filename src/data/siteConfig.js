@@ -4,14 +4,14 @@
 export const SITE = {
   name:        'TATA RAAM KUMAR',
   tagline:     'Strategic Intelligence & Fullstack Developer',
-  email:       'YOUR_EMAIL@gmail.com',          // ← replace
-  whatsapp:    '+91XXXXXXXXXX',                  // ← replace
+  email:       'tatu.ind@hotmail.com',          // ← replace
+  whatsapp:    '+919566698821',                  // ← replace
   calendly:    'https://calendly.com/YOUR_LINK', // ← replace
   github:      'https://github.com/TATARAAMKUMAR33',
   linkedin:    'https://linkedin.com/in/tata-raam-kumar',
   substack:    'https://tataraamkumar.substack.com',
   substackRSS: 'https://tataraamkumar.substack.com/feed',
-  location:    'Karur, Tamil Nadu, India',
+  location:    'Tamil Nadu, India',
   available:   true, // shows "Available for work" badge
 }
 
@@ -104,11 +104,11 @@ export const PAYMENT_INFO = {
   },
   bank: {
     enabled:    true,
-    name:       'YOUR NAME',                    // ← replace
-    bank:       'YOUR BANK NAME',               // ← replace
-    account:    'XXXX XXXX XXXX',              // ← replace
-    ifsc:       'XXXXXXXXX',                   // ← replace
-    upi:        'yourname@upi',                // ← replace
+    name:       'TATA RAAM KUMAR',                    // ← replace
+    bank:       'CANARA BANK',               // ← replace
+    account:    '110157883296',              // ← replace
+    ifsc:       'CNRB0001227',                   // ← replace
+    
   },
   stripe: {
     enabled:    false,                          // set true after Stripe setup
