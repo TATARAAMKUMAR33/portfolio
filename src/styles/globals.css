@@ -1,0 +1,173 @@
+/* ── Google Fonts — must be FIRST before @tailwind ────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Persona CSS Variables ────────────────────────────────── */
+/* Default / Policy Intelligence */
+:root, [data-persona="policy"] {
+  --color-primary:    #0B1F3A;
+  --color-accent:     #D4AF37;
+  --color-surface:    #F4F6F9;
+  --color-muted:      #6C757D;
+  --color-text-main:  #0B1F3A;
+  --color-text-sub:   #4A5568;
+  --color-border:     #E2E8F0;
+  --color-card-bg:    #FFFFFF;
+  --color-hero-from:  #0B1F3A;
+  --color-hero-to:    #1a3a6e;
+  --persona-font:     'Playfair Display', serif;
+}
+
+[data-persona="developer"] {
+  --color-primary:    #1A1A2E;
+  --color-accent:     #00D2FF;
+  --color-surface:    #0f0f1a;
+  --color-muted:      #8892b0;
+  --color-text-main:  #E6F1FF;
+  --color-text-sub:   #8892b0;
+  --color-border:     #1e2a4a;
+  --color-card-bg:    #162032;
+  --color-hero-from:  #0a0a1a;
+  --color-hero-to:    #1A1A2E;
+  --persona-font:     'JetBrains Mono', monospace;
+}
+
+[data-persona="media"] {
+  --color-primary:    #1a0a00;
+  --color-accent:     #FF6B35;
+  --color-surface:    #FFF8F5;
+  --color-muted:      #8B6E5A;
+  --color-text-main:  #1a0a00;
+  --color-text-sub:   #5D4037;
+  --color-border:     #F5DDD0;
+  --color-card-bg:    #FFFFFF;
+  --color-hero-from:  #2D0A00;
+  --color-hero-to:    #4a1500;
+  --persona-font:     'Playfair Display', serif;
+}
+
+[data-persona="investor"] {
+  --color-primary:    #0A2A1A;
+  --color-accent:     #FFD700;
+  --color-surface:    #F0FFF4;
+  --color-muted:      #4A7C59;
+  --color-text-main:  #0A2A1A;
+  --color-text-sub:   #2D6A4F;
+  --color-border:     #C3E6CB;
+  --color-card-bg:    #FFFFFF;
+  --color-hero-from:  #0A2A1A;
+  --color-hero-to:    #1a4a2e;
+  --persona-font:     'Inter', sans-serif;
+}
+
+[data-persona="ai"] {
+  --color-primary:    #1C1C1C;
+  --color-accent:     #A855F7;
+  --color-surface:    #F8F4FF;
+  --color-muted:      #7C6FA0;
+  --color-text-main:  #1C1C1C;
+  --color-text-sub:   #4A3F6B;
+  --color-border:     #E0D7FF;
+  --color-card-bg:    #FFFFFF;
+  --color-hero-from:  #1C1C1C;
+  --color-hero-to:    #2d1a4a;
+  --persona-font:     'Inter', sans-serif;
+}
+
+/* ── Base Styles ─────────────────────────────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Persona Transition ──────────────────────────────────── */
+[data-persona] { transition: all 0.35s ease; }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 3px; }
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.gradient-hero {
+  background: linear-gradient(135deg, var(--color-hero-from), var(--color-hero-to));
+}
+.accent-text { color: var(--color-accent); }
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+.section-title {
+  font-family: var(--persona-font);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-public    { background: #dcfce7; color: #166534; }
+.badge-premium   { background: #fef3c7; color: #92400e; }
+.badge-recruiter { background: #e0e7ff; color: #3730a3; }
+
+/* ── Mobile responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .admin-grid { grid-template-columns: 1fr !important; }
+  .persona-bar { overflow-x: auto; white-space: nowrap; padding-bottom: 4px; }
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-fade-in  { animation: fadeIn  0.4s ease-in-out; }
+.animate-slide-up { animation: slideUp 0.4s ease-out; }
