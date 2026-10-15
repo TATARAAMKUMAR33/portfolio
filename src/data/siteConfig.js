@@ -6,7 +6,6 @@ export const SITE = {
   tagline:     'Strategic Intelligence & Fullstack Developer',
   email:       'tatu.ind@hotmail.com',          // ← replace
   whatsapp:    '+919566698821',                  // ← replace
-  calendly:    'https://calendly.com/YOUR_LINK', // ← replace
   github:      'https://github.com/TATARAAMKUMAR33',
   linkedin:    'https://linkedin.com/in/tata-raam-kumar',
   substack:    'https://tataraamkumar.substack.com',
